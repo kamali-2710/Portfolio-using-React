@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montagu+Slab:opsz,wght@16..144,100..700&family=Orbitron:wght@400..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Young+Serif&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* GLOBAL VARIABLES */
+
+:root{
+
+  --poppins:"Poppins", sans-serif;
+  --montagu:"Montagu Slab", serif;
+  --serif:"Young Serif", serif;
+  --san-serif:"Inter", sans-serif;
+  --Manrope:"Manrope", sans-serif;
+  --Bebas:"Bebas Neue", sans-serif;
+  --Cinzel:"Cinzel", serif;
+  --Orbit:"Orbitron", sans-serif;
+
+  /* DARK MODE DEFAULT */
+
+  --color1:#00d9ff;
+
+  /* LIGHT MODE */
+
+  --background-clr:#f5f7fb;
+  --text-clr:#222;
+  --card-clr:#ffffff;
+}
+
+/* BODY */
+
+body{
+  background-color:var(--background-clr);
+  color:var(--text-clr);
+  transition:0.4s;
+}
+
+/* LIGHT MODE */
+
+body.dark{
+
+  --background-clr:#0b1e2d;
+  --text-clr:#ffffff;
+  --card-clr:#13293d;
+
+}

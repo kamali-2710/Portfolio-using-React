@@ -1,0 +1,278 @@
+/* GRID LAYOUT (NO COLLAPSE) */
+.project-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+  justify-content: space-evenly;
+  padding-left: 150px;
+  width: 90%;
+  margin: 0px 0px 50px 40px;
+  padding-top: 90px;
+}
+
+.project-title {
+  font-size: 45px;
+  margin-top: 80px;
+}
+
+.contact-page span {
+  color: var(--color1);
+}
+
+/* CARD */
+.project-card {
+  background: linear-gradient(145deg, #162c3a, #132935);
+  box-shadow: 0px 2px 15px #4eafff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 90%;
+  color: white;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* HOVER BORDER EFFECT */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 1px;
+  background: linear-gradient(120deg, transparent, #00c8ff3b, transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-15px);
+}
+
+/* IMAGE BOX */
+.img-box {
+  /* border: 7px solid red; */
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* IMAGE */
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+/* IMAGE HOVER ZOOM */
+.img-box:hover img {
+  transform: scale(1.1);
+}
+
+/* OVERLAY (FIXED - alternative to pointer-events) */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.3s;
+
+  /* Alternative fix: overlay won't block clicks */
+  z-index: 1; /* Keep below buttons */
+}
+
+/* ICON */
+.overlay .icon {
+  background: #4eafff;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 18px;
+  transform: scale(0);
+  transition: 0.3s;
+
+  /* Bring icon above overlay so it's clickable */
+  position: relative;
+  z-index: 2;
+}
+
+/* SHOW OVERLAY */
+.img-box:hover .overlay {
+  opacity: 1;
+}
+
+.img-box:hover .icon {
+  transform: scale(1);
+}
+
+/* TEXT */
+.project-card h3 {
+  font-size: 16px;
+  margin: 10px 0 10px;
+  text-align: center;
+  color: #00c6ff;
+}
+
+.project-card p {
+  font-size: 14px;
+  color: #b8c8d5;
+  margin-bottom: 15px;
+}
+
+/* TAGS */
+.tags span {
+  background: #243f52;
+  box-shadow: 0px 0px 3px #00c6ff;
+  color: #9fd3ff;
+  padding: 4px 10px;
+  margin: 4px 10px 0 0;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 11px;
+}
+
+/* BUTTONS */
+.project-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  margin-right: 10px;
+
+  /* Make buttons top layer to avoid overlay block */
+  position: relative;
+  z-index: 10;
+}
+
+.project-btns .btn {
+  flex: 1;
+  text-align: center;
+  padding: 7px 0;
+  font-size: 13px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* GITHUB BUTTON */
+.project-btns .github {
+  background: transparent;
+  border: 1px solid #00c6ff;
+  color: #00c6ff;
+}
+
+.project-btns .github:hover {
+  background: #00c6ff;
+  color: black;
+}
+
+/* DEMO BUTTON */
+.project-btns .demo {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+}
+
+.project-btns .demo:hover {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+}
+
+
+/* TABLET: ≤768px */
+@media all and (max-width: 768px) {
+
+  .project-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    margin: 0 auto 50px auto;
+    padding: 120px 70px 100px 70px;
+  }
+
+  .project-card {
+    width: 100%; /* take full grid column */
+    padding: 15px;
+      z-index: -1
+  }
+
+  .img-box {
+    height: 150px;
+  }
+
+  .project-card h3 {
+    font-size: 15px;
+  }
+
+  .project-card p {
+    font-size: 13px;
+  }
+
+  .tags span {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .project-btns .btn {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+}
+
+/* MOBILE: ≤576px */
+@media all and (max-width: 576px) {
+
+  .project-section {
+    display: grid;
+    grid-template-columns: 1fr; /* single column */
+    gap: 35px;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    margin: 0 auto 50px auto;
+    padding: 80px 60px 60px 60px;
+  }
+
+  .project-card {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .img-box {
+    height: 130px;
+  }
+
+  .project-card h3 {
+    font-size: 14px;
+  }
+
+  .project-card p {
+    font-size: 12px;
+  }
+
+  .tags span {
+    font-size: 9px;
+    padding: 2px 6px;
+    margin: 3px 5px 0 0;
+  }
+
+  .project-btns {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .project-btns .btn {
+    font-size: 11px;
+    padding: 5px 0;
+  }
+}
