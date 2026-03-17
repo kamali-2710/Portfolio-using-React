@@ -1,7 +1,7 @@
 
 import './App.css'
 import Header from './Components/Header'
-import Socialicons from './Components/socialicons'
+import Socialicons from './Components/Socialicons'
 import Top from './Components/Top'
 import Mainpage from './Mainpage'
 import { useState } from 'react'
@@ -13,8 +13,8 @@ function App() {
     <>
      <Header />
      <Top />
-      <Mainpage />
      <Socialicons />
+      <Mainpage />
 
     </>
   )
