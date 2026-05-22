@@ -22,7 +22,7 @@ const Top = () => {
     <div className="head">
 
       <div className="logo">
-        <img src="./images/papua-new-guinea (2).png" alt="" className="img" />
+        <img src="./images/k.png" alt="" className="img" />
       </div>
 
       <div className="setting" onClick={toggleTheme}>
